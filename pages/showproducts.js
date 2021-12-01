@@ -1,6 +1,5 @@
 import { useState } from "react";
 import ProductList from "../components/Productlist";
-import Nav from "../components/Nav.js";
 //import Basket from "./basket";
 
 function Showproducts() {
@@ -65,10 +64,7 @@ function Showproducts() {
 
   return (
     <div className="App">
-      <ProductList
-        products={productCopy}
-      />
-      
+      <ProductList products={productCopy} />
     </div>
   );
 }

@@ -1,14 +1,15 @@
-const Dashboard = ({ name, bio }) => (
+const GitHubData = ({ user }) => (
   <>
-    <h2>{name}</h2>
-    <p>{`Bio: ${bio}`}</p>
+    <h2>{user.name}</h2>
+    <p>{`Bio: ${user.bio}`}</p>
   </>
 );
 
-Dashboard.getInitialProps = async () => {
+GitHubData.getInitialProps = async () => {
   const res = await fetch("https://api.github.com/users/stineps");
   const user = await res.json();
 
-  return user;
+  return { user };
 };
-export default Dashboard;
+
+export default GitHubData;

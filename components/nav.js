@@ -6,7 +6,7 @@ export default function Nav() {
         <a>Dashboard</a>
       </Link>
 
-      <Link href="pages/showproducts.js">
+      <Link href="/showproducts">
         <a>Product list</a>
       </Link>
 
