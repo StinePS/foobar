@@ -1,2 +1,10 @@
-@forward "button";
+@forward "form";
+@forward "grids";
 @forward "navigation";
+
+@media (min-width: 1024px) {
+  section {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+}

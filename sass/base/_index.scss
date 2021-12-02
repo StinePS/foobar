@@ -1,17 +1,32 @@
 @forward "typography";
 
-html,
-body {
-  padding: 0;
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-bg: rgba(255, 244, 235, 1);
+  --sec-bg: rgba(244, 212, 187, 1);
+  --terti-bg: rgba(232, 177, 132, 1);
+  --main-txt: rgba(19, 36, 53, 1);
+}
+
+.dark {
+  --main-bg: rgba(19, 36, 53, 1);
+  --sec-bg: rgba(31, 49, 67, 1);
+  --terti-bg: rgba(232, 177, 132, 1);
+  --main-txt: rgba(229, 157, 97, 1);
+}
+
+body {
+  font-family: -apple-system, Helvetica Neue, sans-serif;
+  background-color: var(--main-bg);
+  color: var(--main-txt);
 }
 
 a {
   color: inherit;
   text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
 }

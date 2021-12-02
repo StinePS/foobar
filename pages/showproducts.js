@@ -6,7 +6,6 @@ function Showproducts() {
   const [products, setProducts] = useState([
     {
       id: 1,
-      gender: "Men",
       category: "IPA",
       productdisplayname: "Bajer",
       price: 49,
@@ -15,7 +14,6 @@ function Showproducts() {
     },
     {
       id: 2,
-      gender: "Men",
       category: "IPA",
       productdisplayname: "Bajer",
       price: 49,
@@ -24,7 +22,6 @@ function Showproducts() {
     },
     {
       id: 3,
-      gender: "Men",
       category: "IPA",
       productdisplayname: "Bajer",
       price: 49,
@@ -33,7 +30,6 @@ function Showproducts() {
     },
     {
       id: 4,
-      gender: "Men",
       category: "IPA",
       productdisplayname: "Bajer",
       price: 49,

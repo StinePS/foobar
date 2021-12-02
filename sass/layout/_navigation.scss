@@ -1,18 +1,20 @@
 /* Nesting */
 nav {
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  li {
-    display: inline-block;
-  }
-
   a {
     display: block;
-    padding: 6px 12px;
+    padding: 0.5rem 1rem;
     text-decoration: none;
+  }
+}
+.nav-width {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media (min-width: 1024px) {
+  .nav-width {
+    max-width: 1300px;
+    margin: 0 auto;
   }
 }
