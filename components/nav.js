@@ -1,5 +1,6 @@
 import Link from "next/link";
-import DarkmodeToggle from "./DarkmodeToggle";
+import DarkmodeToggle from "../components/DarkmodeToggle";
+
 export default function Nav() {
   return (
     <nav>

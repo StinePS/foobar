@@ -4,7 +4,7 @@
   align-items: center;
   border-radius: 9999px;
   height: 2.5rem;
-  width: 4rem;
+  width: 4.5rem;
   border: none;
 }
 
@@ -26,11 +26,11 @@
 }
 
 .switch-marker-darkmode {
-  background-color: #000;
-  transform: translateX(calc(4rem - 2rem - 2px));
+  background-color: var(--main-bg);
+  transform: translateX(calc(4.5rem - 2rem - 2px));
 }
 
 .switch-marker-lightmode {
-  background-color: #fff;
+  background-color: var(--main-bg);
   transform: translateX(2px);
 }
