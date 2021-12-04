@@ -1,4 +1,28 @@
-.container {
+.grid-2-mobile {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.flex-justify {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-wrap p {
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+@media (min-width: 1024px) {
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
 }

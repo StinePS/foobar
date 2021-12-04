@@ -1,9 +1,13 @@
 @forward "form";
 @forward "grids";
-@forward "navigation";
+@forward "nav";
+
+.center {
+  text-align: center;
+}
 
 @media (min-width: 1024px) {
-  section {
+  main {
     max-width: 1300px;
     margin: 0 auto;
   }
