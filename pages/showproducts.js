@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ProductList from "../components/Productlist";
+import Basket from "../pages/basket"
 //import Basket from "./basket";
 
 function Showproducts() {
@@ -38,17 +39,13 @@ function Showproducts() {
     },
   ]);
   const [basket, setBasket] = useState([]);
-  /*function addProduct() {
-    setProducts((oldProducts) =>
-      oldProducts.concat({ productdisplayname: "Hi", price: 12 })
-    );
-  }*/
-  /*function addToBasket(product) {
+    function addToBasket(product) {
     setBasket(function (oldBasket) {
       const nextState = oldBasket.concat(product);
       return nextState;
     });
-  }*/
+  }
+  
   const productCopy = [...products];
   productCopy.sort((a, b) => {
     if (a.productdisplayname > b.productdisplayname) {
@@ -60,10 +57,14 @@ function Showproducts() {
 
   return (
     <div className="App">
-      <ProductList products={productCopy} />
+      <ProductList
+        addToBasket={addToBasket}
+        products={productCopy}
+      />
+      <Basket basket={basket} />
     </div>
   );
-}
+  }
 
 export default Showproducts;
 
