@@ -34,8 +34,8 @@ export default function Countdown() {
   // If it's later than 22:00:00
   if ((hours === 0) & (minutes === 0) & (seconds === 0)) {
     return (
-      <div>
-        <p className="time">{"We're closed"}</p>
+      <div className="center">
+        <p className="time">{"Sorry - We're closed for the night"}</p>
       </div>
     );
   }
