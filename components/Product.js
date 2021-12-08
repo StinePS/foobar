@@ -13,11 +13,15 @@ export default function Product(props) {
   }
   function plus() {
     setAmount((oldAmount) => oldAmount + 1);
-    /*props.addToBasket({
+
+  }
+
+  function getInTheBasket(){
+    props.addToBasket({
       price: props.price,
       productdisplayname: props.productdisplayname,
       id: props.id,
-    });*/
+    });
   }
 
   return (
@@ -31,6 +35,9 @@ export default function Product(props) {
       <button onClick={minus}> - </button>
       {amount}
       <button onClick={plus}> + </button>
+      <button onClick={getInTheBasket} className="full-bleed">
+        Get in the basket
+      </button>
     </article>
   );
 }
