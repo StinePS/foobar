@@ -5,8 +5,7 @@ export default function MyBasket(props) {
     let sum = props.basket.reduce(function (previousValue, currentValue) {
       return previousValue + currentValue.price;
     }, initialValue);
-    const mapped = props.basket.map((product) => <p key={product.id}>{product.productdisplayname}</p>);
-    
+    const mapped = props.basket.map((product) => <p key={product.id}>{product.name} {product.amount}</p>);
   
     return (
       <div>

@@ -1,12 +1,17 @@
-import { useState } from "react";
-import MyBasket from "../components/MyBasket";
+import { useState, useEffect } from "react";
+import ProductList from "../components/Productlist";
+import Basket from "../components/Upperbasket"
 
+function BasketPage() {
+  const [products, setProducts] = useState([]);
+  const [basket, setBasket] = useState(JSON.parse(localStorage.getItem("basket")));
+  const productCopy = [...products];
 
-export default function Basket(props) {
-  const [basket, setBasket] = useState([]);
   return (
-    <aside>
-      <MyBasket basket={props.basket} />
-    </aside>
+    <div className="App">
+      <Basket basket={basket} />
+    </div>
   );
-}
+  }
+
+export default BasketPage;

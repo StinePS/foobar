@@ -1,10 +1,91 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ProductList from "../components/Productlist";
-import Basket from "../pages/basket"
-//import Basket from "./basket";
+import Basket from "../components/Upperbasket"
 
 function Showproducts() {
-  const [products, setProducts] = useState([
+  const [products, setProducts] = useState([]);
+  const [basket, setBasket] = useState([]);
+  const productCopy = [...products];
+  useEffect(() => {
+    async function fetchData() {
+      const res = await fetch(
+        "https://barcode-data.herokuapp.com/beertypes"
+      );
+      const products = await res.json();
+      setProducts(products);
+    }
+    fetchData();
+  });
+
+/*function addToBasket(product){
+    const exist = basket.find((x) => x.id === product.id);
+    if (exist) {
+      setBasket(
+        basket.map((x) =>
+          x.id === product.id ? { ...exist, qty: exist.qty + 1 } : x
+        )
+      );
+    } else {
+      setBasket([...basket, { ...product, qty: 1 }]);
+    }
+}*/
+
+function addToBasket(product){
+  //lav en kopi
+  let nextState = [...basket];
+  //tjek om øl allerede er i basket
+  const index = nextState.find(item=>item.name===product.name);
+  if(index>-1){
+  //fandt den
+  nextState[index].amount=nextState[index].amount+1;
+  } else {
+  //findes ikke
+  product.amount=1;
+  nextState=nextState.concat(product);
+  }
+  localStorage.setItem("basket", JSON.stringify(nextState))
+  setBasket(nextState);
+}
+
+    /*function addToBasket(product) {
+    setBasket(function (oldBasket) {
+      const nextState = oldBasket.concat(product);
+      return nextState;
+    });
+  }*/
+
+  /*
+  function addToBasket(product){
+    const check_index = basket.findIndex(product => product.id === id);
+    if (check_index !== -1){
+      basket[check_index].amount++;
+    } else {
+      basket.push({...products.find(product => product.id === id), quantity:1 })
+    }
+  }*/
+  
+  /*productCopy.sort((a, b) => {
+    if (a.name > b.name) {
+      return 1;
+    } else {
+      return -1;
+    }
+  });*/
+
+  return (
+    <div className="App">
+      <ProductList
+        addToBasket={addToBasket}
+        products={productCopy}
+      />
+      <Basket basket={basket} />
+    </div>
+  );
+  }
+
+export default Showproducts;
+
+/*const [products, setProducts] = useState([
     {
       id: 1,
       category: "IPA",
@@ -37,63 +118,4 @@ function Showproducts() {
       brandname: "Falskberg",
       soldout: 0,
     },
-  ]);
-  const [basket, setBasket] = useState([]);
-    function addToBasket(product) {
-    setBasket(function (oldBasket) {
-      const nextState = oldBasket.concat(product);
-      return nextState;
-    });
-  }
-  
-  const productCopy = [...products];
-  productCopy.sort((a, b) => {
-    if (a.productdisplayname > b.productdisplayname) {
-      return 1;
-    } else {
-      return -1;
-    }
-  });
-
-  return (
-    <div className="App">
-      <ProductList
-        addToBasket={addToBasket}
-        products={productCopy}
-      />
-      <Basket basket={basket} />
-    </div>
-  );
-  }
-
-export default Showproducts;
-
-/*function Productlist(props){
-  const product = {
-    id: 1163,
-    productdisplayname: "Round Neck Jersey",
-    price: 895,
-    soldOut: 0,
-  };
-return (
-  <section>
-  <h1>Product List</h1>
-  <section className="ProductList">
-    <Product {...props.product} />
-    <ProductList product={product} />
-  </section>
-</section>
-);
-}
-
-function Product(props) {
-  console.log(props);
-  return (
-    <article>
-      <h2>{props.productdisplayname}</h2>
-      <p>${props.price}</p>
-    </article>
-  );
-}
-
-export default Productlist;*/
+  ]);*/
