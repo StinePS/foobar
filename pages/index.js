@@ -2,6 +2,8 @@ import Head from "next/head";
 import Bartenders from "../components/Bartenders";
 import BeersTonight from "../components/BeersTonight";
 import Countdown from "../components/Countdown";
+import NowPrepping from "../components/NowPrepping";
+import NowServing from "../components/NowServing";
 import useDashboardDetails from "../hooks/useDashboardDetails";
 
 export default function Dashboard() {
@@ -22,28 +24,21 @@ export default function Dashboard() {
             <div className="column sec-bg">
               <h2 className="center">Now serving</h2>
               <div className="flex-wrap">
-                <p className="terti-bg sec-txt">101</p>
-                <p className="terti-bg sec-txt">102</p>
-                <p className="terti-bg sec-txt">103</p>
+                <NowServing serving={data.serving} />
               </div>
             </div>
 
             <div className="column sec-bg">
               <h2 className="center">Now prepping</h2>
               <div className="flex-wrap">
-                <p className="terti-bg sec-txt">104</p>
-                <p className="terti-bg sec-txt">105</p>
-                <p className="terti-bg sec-txt">106</p>
-                <p className="terti-bg sec-txt">107</p>
+                <NowPrepping queue={data.queue} />
               </div>
             </div>
           </section>
 
           <section>
             <h2 className="center">Our beers tonight</h2>
-            <div className="grid-2">
-              <BeersTonight />
-            </div>
+            <BeersTonight />
           </section>
 
           <section>
@@ -54,9 +49,11 @@ export default function Dashboard() {
               </div>
               <div className="column">
                 <h2 className="center">Favourites</h2>
-                <p>Beer no. 3</p>
-                <p>Beer no. 7</p>
-                <p>Beer no. 2</p>
+                <div className="flex-justify">
+                  <h3>Sleighride</h3>
+                  <h3>Ruined childhood</h3>
+                  <h3>Steampunk</h3>
+                </div>
               </div>
             </div>
           </section>

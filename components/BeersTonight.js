@@ -5,8 +5,9 @@ export default function BeersTonight() {
   if (!data) return <div>Loading...</div>;
   if (error) return <div>An error has occured...</div>;
 
+  // Insert img for each beer
   return (
-    <div>
+    <div className="grid-2">
       {data.map((beer) => (
         <article key={beer.name}>
           <h3>{beer.name}</h3>
