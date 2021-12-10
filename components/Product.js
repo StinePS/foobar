@@ -19,7 +19,7 @@ export default function Product(props) {
   function getInTheBasket(){
     props.addToBasket({
       price: props.price,
-      productdisplayname: props.productdisplayname,
+      name: props.name,
       id: props.id,
     });
   }
@@ -30,7 +30,7 @@ export default function Product(props) {
         backgroundColor: color,
       }}
     >
-      <h2>{props.productdisplayname}</h2>
+      <h2>{props.name}</h2>
       <p>{props.price} ,-</p>
       <button onClick={minus}> - </button>
       {amount}
