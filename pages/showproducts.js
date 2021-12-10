@@ -2,9 +2,8 @@ import { useState, useEffect } from "react";
 import ProductList from "../components/Productlist";
 import Basket from "../components/Upperbasket"
 
-function Showproducts() {
+function Showproducts(props) {
   const [products, setProducts] = useState([]);
-  const [basket, setBasket] = useState([]);
   const productCopy = [...products];
   useEffect(() => {
     async function fetchData() {
@@ -32,7 +31,7 @@ function Showproducts() {
 
 function addToBasket(product){
   //lav en kopi
-  let nextState = [...basket];
+  let nextState = [...props.basket];
   //tjek om øl allerede er i basket
   const index = nextState.find(item=>item.name===product.name);
   if(index>-1){
@@ -43,8 +42,8 @@ function addToBasket(product){
   product.amount=1;
   nextState=nextState.concat(product);
   }
-  localStorage.setItem("basket", JSON.stringify(nextState))
-  setBasket(nextState);
+  //localStorage.setItem("basket", JSON.stringify(nextState))
+  props.setBasket(nextState);
 }
 
     /*function addToBasket(product) {
@@ -72,13 +71,14 @@ function addToBasket(product){
     }
   });*/
 
+
   return (
     <div className="App">
       <ProductList
         addToBasket={addToBasket}
         products={productCopy}
       />
-      <Basket basket={basket} />
+      <Basket basket={props.basket} />
     </div>
   );
   }
