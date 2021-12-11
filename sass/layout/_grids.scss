@@ -10,6 +10,12 @@
   gap: 1rem;
 }
 
+.grid-3-mobile {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
 .flex-center {
   display: flex;
   justify-content: center;

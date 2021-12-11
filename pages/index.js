@@ -16,21 +16,25 @@ export default function Dashboard() {
         <title>Foobar</title>
         <meta name="description" content="A school project" />
       </Head>
-      {!data ? <div>Loading...</div> : null}
+      {!data ? (
+        <div>
+          <h2 className="center">Loading...</h2>
+        </div>
+      ) : null}
       {data ? (
         <main>
           <h1 className="center">Foobar</h1>
           <Countdown />
           <section className="grid-2-mobile">
             <div className="column sec-bg rounded-corners">
-              <h2 className="center">Now serving</h2>
+              <h2 className="center header">Now serving</h2>
               <div className="flex-wrap">
                 <NowServing serving={data.serving} />
               </div>
             </div>
 
             <div className="column sec-bg rounded-corners">
-              <h2 className="center">Now prepping</h2>
+              <h2 className="center header">Now prepping</h2>
               <div className="flex-wrap">
                 <NowPrepping queue={data.queue} />
               </div>
@@ -38,18 +42,18 @@ export default function Dashboard() {
           </section>
 
           <section className="sec-bg rounded-corners">
-            <h2 className="center">Our beers tonight</h2>
+            <h2 className="center header">Currently on tap</h2>
             <BeersTonight />
           </section>
 
           <section>
             <div className="grid-2">
               <div className="column sec-bg rounded-corners">
-                <h2 className="center">Our amazing crew</h2>
+                <h2 className="center header">Our amazing crew</h2>
                 <Bartenders bartenders={data.bartenders} />
               </div>
               <div className="column sec-bg rounded-corners">
-                <h2 className="center">Favourites</h2>
+                <h2 className="center header">Popular right now</h2>
                 <Favourites />
               </div>
             </div>
