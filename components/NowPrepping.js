@@ -3,7 +3,7 @@ export default function NowPrepping({ queue }) {
     <div className="flex-wrap">
       {queue?.map((queue) => (
         <article key={queue.id}>
-          <h3 className="terti-bg sec-txt">{queue.id}</h3>
+          <h3 className="terti-bg sec-txt order-numbers">{queue.id}</h3>
         </article>
       ))}
     </div>
