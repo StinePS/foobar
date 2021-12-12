@@ -1,22 +1,20 @@
 import { useState } from "react";
 export default function Product(props) {
   const [amount, setAmount] = useState(0);
-  const color = props.soldout ? "red" : "green";
 
-  function minus() {
-    setAmount((oldAmount) => {
-      if (oldAmount > 0) {
-        return oldAmount - 1;
-      }
-      return 0;
-    });
-  }
-  function plus() {
-    setAmount((oldAmount) => oldAmount + 1);
+  // function minus() {
+  //   setAmount((oldAmount) => {
+  //     if (oldAmount > 0) {
+  //       return oldAmount - 1;
+  //     }
+  //     return 0;
+  //   });
+  // }
+  // function plus() {
+  //   setAmount((oldAmount) => oldAmount + 1);
+  // }
 
-  }
-
-  function getInTheBasket(){
+  function getInTheBasket() {
     props.addToBasket({
       price: 49,
       name: props.name,
@@ -25,19 +23,18 @@ export default function Product(props) {
   }
 
   return (
-    <article
-      style={{
-        backgroundColor: color,
-      }}
-    >
+    <article>
       <h2>{props.name}</h2>
-      <p>{49} ,-</p>
-      <button onClick={minus}> - </button>
+      <span>
+        {49},-{" "}
+        <button onClick={getInTheBasket} className="full-bleed">
+          Add to cart
+        </button>
+      </span>
+
+      {/* <button onClick={minus}> - </button>
       {amount}
-      <button onClick={plus}> + </button>
-      <button onClick={getInTheBasket} className="full-bleed">
-        Get in the basket
-      </button>
+      <button onClick={plus}> + </button> */}
     </article>
   );
 }

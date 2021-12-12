@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ProductList from "../components/Productlist";
-import Basket from "../components/Upperbasket"
+import Basket from "../components/Upperbasket";
 
 function BasketPage(props) {
   const [products, setProducts] = useState([]);
@@ -9,9 +9,13 @@ function BasketPage(props) {
 
   return (
     <div className="App">
-      <Basket basket={props.basket} />
+      <main>
+        <section className="sec-bg rounded-corners">
+          <Basket basket={props.basket} />
+        </section>
+      </main>
     </div>
   );
-  }
+}
 
 export default BasketPage;
