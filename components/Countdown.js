@@ -8,9 +8,9 @@ function zeroPadding(value) {
 
 // Counter with inspiration from https://www.youtube.com/watch?v=VNTom2Gtn8s
 export default function Countdown() {
-  const [hours, setHours] = useState(0);
-  const [minutes, setMinutes] = useState(0);
-  const [seconds, setSeconds] = useState(0);
+  const [hours, setHours] = useState(-1);
+  const [minutes, setMinutes] = useState(-1);
+  const [seconds, setSeconds] = useState(-1);
 
   useEffect(() => {
     // Calculate difference between now and 22:00:00 today
@@ -31,8 +31,19 @@ export default function Countdown() {
     return () => clearInterval(interval);
   }, []);
 
+  // Until time is loaded
+  if (hours === -1 && minutes === -1 && seconds === -1) {
+    return (
+      <div className="center">
+        <p className="time" style={{ opacity: 0 }}>
+          Loading
+        </p>
+      </div>
+    );
+  }
+
   // If it's later than 22:00:00
-  if ((hours === 0) & (minutes === 0) & (seconds === 0)) {
+  if (hours === 0 && minutes === 0 && seconds === 0) {
     return (
       <div className="center">
         <p className="time">{"Sorry - We're closed for the night"}</p>

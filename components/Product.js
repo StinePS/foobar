@@ -18,7 +18,7 @@ export default function Product(props) {
 
   function getInTheBasket(){
     props.addToBasket({
-      price: props.price,
+      price: 49,
       name: props.name,
       id: props.id,
     });
@@ -31,7 +31,7 @@ export default function Product(props) {
       }}
     >
       <h2>{props.name}</h2>
-      <p>{props.price} ,-</p>
+      <p>{49} ,-</p>
       <button onClick={minus}> - </button>
       {amount}
       <button onClick={plus}> + </button>

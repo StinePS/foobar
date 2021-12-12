@@ -1,3 +1,4 @@
+import { product } from "platform";
 import { useState, useEffect } from "react";
 import ProductList from "../components/Productlist";
 import Basket from "../components/Upperbasket"
@@ -15,6 +16,8 @@ function Showproducts(props) {
     }
     fetchData();
   });
+
+
 
 /*function addToBasket(product){
     const exist = basket.find((x) => x.id === product.id);

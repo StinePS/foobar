@@ -1,7 +1,7 @@
 import "../sass/main.scss";
 import "react-credit-cards/lib/styles.scss";
 import Nav from "../components/Nav.js";
-import {useState} from "react";
+import { useState } from "react";
 
 function MyApp({ Component, pageProps }) {
   const [basket, setBasket] = useState([]);
