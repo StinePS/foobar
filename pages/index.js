@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Bartenders from "../components/Bartenders";
 import BeersTonight from "../components/BeersTonight";
-import Countdown from "../components/Countdown";
 import Favourites from "../components/Favourites";
 import NowPrepping from "../components/NowPrepping";
 import NowServing from "../components/NowServing";
@@ -23,8 +22,6 @@ export default function Dashboard() {
       ) : null}
       {data ? (
         <main>
-          <h1 className="center">Foobar</h1>
-          <Countdown />
           <section className="grid-2-mobile">
             <div className="column sec-bg rounded-corners">
               <h2 className="center header">Now serving</h2>
