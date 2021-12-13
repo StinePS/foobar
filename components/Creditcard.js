@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { useRef, useState } from "react";
 import Cards from "react-credit-cards";
@@ -65,8 +66,6 @@ export default function CreditCard(props) {
             <span className="hint">Please enter the CVC number of your card (3 digits)</span>
             <span className="hint-double">Please enter the correct expiry date and CVC number of your card</span>
           </fieldset>
-
-          <button>Pay</button>
         </form>
       </div>
     </div>
