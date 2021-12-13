@@ -1,24 +1,29 @@
 import Link from "next/link";
 import DarkmodeToggle from "../components/DarkmodeToggle";
+import IconBeer from "./icons/IconBeer";
+import IconCart from "./icons/IconCart";
+import IconHome from "./icons/IconHome";
 
 export default function Nav() {
   return (
     <nav>
       <div className="nav-width">
         <Link href="/">
-          <a>Dashboard</a>
+          <a>
+            <IconHome className="icon-size main-txt" />
+          </a>
         </Link>
 
         <Link href="/showproducts">
-          <a>Product list</a>
+          <a>
+            <IconBeer className="icon-size main-txt" />
+          </a>
         </Link>
 
-        <Link href="/basket">
-          <a>Basket</a>
-        </Link>
-
-        <Link href="/login">
-          <a>Log in</a>
+        <Link href="/cart">
+          <a>
+            <IconCart className="icon-size main-txt" />
+          </a>
         </Link>
 
         <DarkmodeToggle />
