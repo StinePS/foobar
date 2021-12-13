@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Disclosure } from '@headlessui/react'
 export default function Product(props) {
   const [amount, setAmount] = useState(0);
 
@@ -30,6 +31,14 @@ export default function Product(props) {
         <button onClick={getInTheBasket} className="full-bleed">
           Add to cart
         </button>
+        <Disclosure>
+        <Disclosure.Button className="py-2">
+          Info+
+        </Disclosure.Button>
+        <Disclosure.Panel className="text-gray-500">
+          <p>{props.description.overallImpression}</p>
+        </Disclosure.Panel>
+      </Disclosure>
       </span>
 
       {/* <button onClick={minus}> - </button>
