@@ -18,6 +18,12 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  height: 3.25rem;
+}
+
+.icon-size {
+  width: 2rem;
+  height: 2rem;
 }
 
 @media (max-width: 767px) {
@@ -33,7 +39,12 @@ nav {
   }
 
   .nav-width {
-    max-width: 1300px;
+    max-width: 1200px;
     margin: 0 auto;
+  }
+
+  .icon-size:hover {
+    width: 2.1rem;
+    height: 2.1rem;
   }
 }
