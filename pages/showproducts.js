@@ -27,11 +27,13 @@ function Showproducts() {
     setBasket(nextState);
   }
 
+  
+
   return (
     <div className="App">
       <main>
         <ProductList addToBasket={addToBasket} products={products} />
-        <Basket basket={basket} />
+        <Basket addToBasket={addToBasket} basket={basket} />
       </main>
     </div>
   );

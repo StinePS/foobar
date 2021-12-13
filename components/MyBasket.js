@@ -12,10 +12,12 @@ export default function MyBasket() {
     </p>
   ));
 
+  
   return (
     <div>
       <h2 className="header center">Your cart</h2>
       {mapped}
+      
       <p>{basket.length} items</p>
       <p>{sum},-</p>
     </div>

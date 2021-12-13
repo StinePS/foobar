@@ -7,7 +7,7 @@ function BasketPage(props) {
   const [products, setProducts] = useState([]);
   //const [basket, setBasket] = useState(JSON.parse(localStorage.getItem("basket")));
   const productCopy = [...products];
-
+  
   return (
     <div className="App">
       <main>
