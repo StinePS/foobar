@@ -6,7 +6,7 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export default function useBeers() {
   return useSWR("https://barcode-data.herokuapp.com/beertypes", fetcher, {
-    // Don't refresh this data (that never changes)
+    // Don't refresh this data (because it never changes)
     // https://swr.vercel.app/docs/options
     revalidateIfStale: false,
     revalidateOnFocus: false,
