@@ -1,7 +1,7 @@
-// Switch modelled on https://headlessui.dev/react/switch
 import { useEffect, useState } from "react";
 import { Switch } from "@headlessui/react";
 
+// Switch for darkmode modelled on https://headlessui.dev/react/switch
 export default function DarkmodeToggle() {
   const [mode, setMode] = useState(false);
 

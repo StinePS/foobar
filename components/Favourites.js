@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+// Hardcoded favourites on dashboard
 export default function Favourites() {
   return (
     <div className="grid-3-mobile">

@@ -6,9 +6,10 @@ export default function BeersTonight() {
   if (!beersTonight) return <div>Loading...</div>;
 
   return (
+    // Map over each of the beers currently on tap to create an article
     <div className="grid-2">
       {beersTonight.map((beer) => (
-        <article key={beer.name} className="grid-1-3">
+        <article key={beer.name} className="beer-card grid-1-3">
           <div>
             <Image src={`/images/${beer.label}`} alt={`${beer.name} - A lovely beer`} width={150} height={150} />
           </div>

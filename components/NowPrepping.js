@@ -1,5 +1,6 @@
 export default function NowPrepping({ queue }) {
   return (
+    // Map over each item in the queue and create an article for each
     <div className="flex-wrap">
       {queue?.map((queue) => (
         <article key={queue.id}>

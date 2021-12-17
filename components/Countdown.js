@@ -6,14 +6,14 @@ function zeroPadding(value) {
   return value.toString();
 }
 
-// Counter with inspiration from https://www.youtube.com/watch?v=VNTom2Gtn8s
+// Counter made with inspiration from https://www.youtube.com/watch?v=VNTom2Gtn8s
 export default function Countdown() {
   const [hours, setHours] = useState(-1);
   const [minutes, setMinutes] = useState(-1);
   const [seconds, setSeconds] = useState(-1);
 
+  // Calculate difference between now and 22:00:00 today
   useEffect(() => {
-    // Calculate difference between now and 22:00:00 today
     const interval = setInterval(() => {
       const now = new Date();
       const targetTime = new Date();
