@@ -1,13 +1,7 @@
-import { useState } from "react";
-import Basket from "../components/Upperbasket";
+import Basket from "../components/Basket";
 import Link from "next/link";
-import ProductList from "../components/Productlist";
 
-function BasketPage(props) {
-  const [products, setProducts] = useState([]);
-  //const [basket, setBasket] = useState(JSON.parse(localStorage.getItem("basket")));
-  const productCopy = [...products];
-  
+function BasketPage() {
   return (
     <div className="App">
       <main>
@@ -15,7 +9,7 @@ function BasketPage(props) {
           <div className="progress">
             <p>Step 1 of 3</p>
           </div>
-          <Basket basket={props.basket} />
+          <Basket />
           <div className="btn-container center">
             <Link href="/showproducts">
               <a className="btn">Back to beers</a>

@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Bartenders from "../components/Bartenders";
 import BeersTonight from "../components/BeersTonight";
 import Favourites from "../components/Favourites";
@@ -11,10 +10,6 @@ export default function Dashboard() {
 
   return (
     <div>
-      <Head>
-        <title>Foobar</title>
-        <meta name="description" content="A school project" />
-      </Head>
       {!data ? (
         <div>
           <h2 className="center">Loading...</h2>
