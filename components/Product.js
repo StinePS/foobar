@@ -28,13 +28,13 @@ export default function Product(props) {
           <h2>{props.name}</h2>
           <p>{`${props.alc}%`}</p>
           <p className="price">Kr. {49},- </p>
-          <p className="notontap" hidden={onTap === true}>
+          <p className="notontap" hidden={onTap !== false}>
             This beer is not on tap today
           </p>
         </div>
       </div>
       <div className="product-buttons">
-        <button onClick={getInTheBasket} disabled={onTap === false} className="btn">
+        <button onClick={getInTheBasket} disabled={onTap !== true} className="btn">
           Add to cart
         </button>
         <Disclosure>
