@@ -1,16 +1,9 @@
 import ProductList from "../components/Productlist";
 import { useBasket } from "../hooks/useBasket";
-import useBeers from "../hooks/useBeers";
+import { getBeers } from "../libs/beers";
 
-function Showproducts() {
+function Showproducts({ products }) {
   const { addProduct } = useBasket();
-  const { data: products } = useBeers();
-  if (!products)
-    return (
-      <div>
-        <h2 className="center">Loading...</h2>
-      </div>
-    );
 
   return (
     <div className="App">
@@ -19,6 +12,13 @@ function Showproducts() {
       </main>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const beers = await getBeers();
+  return {
+    props: { products: beers },
+  };
 }
 
 export default Showproducts;
