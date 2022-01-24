@@ -1,8 +1,16 @@
+import { getBeers } from "../libs/beers";
 import ProductList from "../components/Productlist";
 import { useBasket } from "../hooks/useBasket";
-import { getBeers } from "../libs/beers";
 
-function Showproducts({ products }) {
+// Fetch the static data for our path, thus avoiding ever giving "Loading... message"
+export async function getStaticProps() {
+  const beers = await getBeers();
+  return {
+    props: { products: beers },
+  };
+}
+
+export default function Showproducts({ products }) {
   const { addProduct } = useBasket();
 
   return (
@@ -13,12 +21,3 @@ function Showproducts({ products }) {
     </div>
   );
 }
-
-export async function getStaticProps() {
-  const beers = await getBeers();
-  return {
-    props: { products: beers },
-  };
-}
-
-export default Showproducts;

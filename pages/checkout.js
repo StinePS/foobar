@@ -1,9 +1,9 @@
-import { useRouter } from "next/dist/client/router";
-import { useRef, useState } from "react";
 import Cards from "react-credit-cards";
 import Link from "next/link";
 import { useBasket } from "../hooks/useBasket";
 import { useOrderNo } from "../hooks/useOrderNo";
+import { useRef, useState } from "react";
+import { useRouter } from "next/dist/client/router";
 
 // Add format "0000 0000 0000 0000" to credit card number
 function clearNumber(value = "") {
@@ -49,14 +49,14 @@ export default function Checkout() {
         body: JSON.stringify(data),
         headers: { "content-type": "application/json" },
       });
-      // If submit went well, then push order
+      // If submit went well - push order
       if (response.ok) {
         clearBasket();
         const json = await response.json();
         setOrderNo(json.id);
         router.push(`/thanks?id=${json.id}`);
       } else {
-        // If not, show error message
+        // If not - show error message
         <div>
           <h2 className="center">{`We're sorry - An error has occured!`}</h2>
         </div>;
