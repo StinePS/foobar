@@ -15,24 +15,3 @@ export default function DarkmodeToggle() {
     </Switch>
   );
 }
-
-// Initial "self-made" toggle
-// import { useEffect, useState } from "react";
-//
-// export default function BtnMode() {
-//   const [mode, setMode] = useState(false);
-
-//   useEffect(() => {
-//     document.documentElement.classList.toggle("dark", mode);
-//   }, [mode]);
-
-//   return (
-//     <button
-//       onClick={() => {
-//         setMode(!mode);
-//       }}
-//     >
-//       {mode ? "🌙" : "☀️"}
-//     </button>
-//   );
-// }

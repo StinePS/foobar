@@ -1,6 +1,6 @@
 export default function CurrentStock({ storage }) {
   return (
-    // Map over each item in storage and create an article for each
+    // Map over each item in storage to create articles
     <div className="grid-2">
       {storage?.map((storage) => (
         <article className="beer-card" key={storage.name}>

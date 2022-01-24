@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-// Make sure there's always 2 digits in each area of the timer
+// Make sure there's always 2 digits in each area of the timer to avoid "jumping"
 function zeroPadding(value) {
   if (value < 10) return `0${value}`;
   return value.toString();
@@ -36,7 +36,7 @@ export default function Countdown() {
     return (
       <div className="center">
         <p className="time" style={{ opacity: 0 }}>
-          Loading
+          Loading...
         </p>
       </div>
     );

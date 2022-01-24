@@ -6,7 +6,7 @@ import IconCart from "./icons/IconCart";
 import IconHome from "./icons/IconHome";
 import IconLogin from "./icons/IconLogin";
 
-// Primary navigation with 3 links with icons + the darkmode toggle
+// Primary navigation with 4 links with icons + the darkmode toggle
 export default function Nav() {
   const { totalItems } = useBasket();
   return (

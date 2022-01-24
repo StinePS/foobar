@@ -4,7 +4,6 @@ import useBeersTonight from "../hooks/useBeersTonight";
 export default function BeersTonight() {
   const beersTonight = useBeersTonight();
   if (!beersTonight) return <div>Loading...</div>;
-
   return (
     // Map over each of the beers currently on tap to create an article
     <div className="grid-2">
