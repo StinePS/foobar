@@ -1,9 +1,9 @@
-import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/solid";
+import { Disclosure } from "@headlessui/react";
 import Image from "next/image";
 import Link from "next/link";
-import useOnTap from "../hooks/useOnTap";
 import { useEffect, useState } from "react";
+import useOnTap from "../hooks/useOnTap";
 
 export default function Product(props) {
   // Use hook to determine if beer is currently on tap
@@ -13,7 +13,7 @@ export default function Product(props) {
     if (addedText) {
       const timeout = setTimeout(() => setAddedText(false), 1000);
       return () => {
-        // "Clean-up function"
+        // "Clean-up function" that resets the counter of items in the basket
         clearTimeout(timeout);
       };
     }

@@ -1,6 +1,7 @@
 import Bartenders from "../components/Bartenders";
 import BeersTonight from "../components/BeersTonight";
 import Favourites from "../components/Favourites";
+import Link from "next/link";
 import NowPrepping from "../components/NowPrepping";
 import NowServing from "../components/NowServing";
 import useDashboardDetails from "../hooks/useDashboardDetails";
@@ -31,10 +32,12 @@ export default function Dashboard() {
           </div>
         </section>
 
-        <section className="sec-bg rounded-corners">
-          <h2 className="center header">Currently on tap</h2>
-          <BeersTonight />
-        </section>
+        <Link href="/showproducts" passHref>
+          <section className="sec-bg rounded-corners">
+            <h2 className="center header">Currently on tap</h2>
+            <BeersTonight />
+          </section>
+        </Link>
 
         <section>
           <div className="grid-2">

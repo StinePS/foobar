@@ -26,32 +26,36 @@ export default function Admin({ isAdmin }) {
   if (!isAdmin) {
     // Logging in with incorrect username/password
     return (
-      <section className="sec-bg rounded-corners">
-        <h1 className="page-header center">Incorrect username and/or password</h1>
-        <div className="btn-container center">
-          <Link href="/login">
-            <a className="btn">Try again</a>
-          </Link>
-        </div>
-      </section>
+      <main>
+        <section className="sec-bg rounded-corners">
+          <h1 className="page-header center">Incorrect username and/or password</h1>
+          <div className="btn-container center">
+            <Link href="/login">
+              <a className="btn">Try again</a>
+            </Link>
+          </div>
+        </section>
+      </main>
     );
   }
   return (
     // Logging in with correct username & password
-    <section className="sec-bg rounded-corners">
-      <h1 className="page-header">Welcome admin!</h1>
-      <h2 className="center header">Current stock</h2>
-      {!data ? (
-        <div>
-          <h2 className="center">Loading...</h2>
-        </div>
-      ) : null}
+    <main>
+      <section className="sec-bg rounded-corners">
+        <h1 className="page-header">Welcome admin!</h1>
+        <h2 className="center header">Current stock</h2>
+        {!data ? (
+          <div>
+            <h2 className="center">Loading...</h2>
+          </div>
+        ) : null}
 
-      {data ? (
-        <div>
-          <CurrentStock storage={data.storage} />
-        </div>
-      ) : null}
-    </section>
+        {data ? (
+          <div>
+            <CurrentStock storage={data.storage} />
+          </div>
+        ) : null}
+      </section>
+    </main>
   );
 }

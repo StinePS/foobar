@@ -2,7 +2,7 @@ import Basket from "../components/Basket";
 import Link from "next/link";
 import { useBasket } from "../hooks/useBasket";
 
-function BasketPage() {
+export default function BasketPage() {
   const { totalItems } = useBasket();
   return (
     <div className="App">
@@ -40,5 +40,3 @@ function BasketPage() {
     </div>
   );
 }
-
-export default BasketPage;

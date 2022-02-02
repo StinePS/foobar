@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }) {
       <OrderContext.Provider value={{ orderNo, setOrderNo }}>
         <Head>
           <title>Foobar</title>
-          <meta name="description" content="A school project" />
+          <meta name="description" content="Order your beer for pick-up!" />
         </Head>
         <Nav />
         <OrderNumber />

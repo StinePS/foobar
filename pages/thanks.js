@@ -1,6 +1,5 @@
-// import { useBasket } from "../hooks/useBasket";
-import { useRouter } from "next/dist/client/router";
 import Link from "next/link";
+import { useRouter } from "next/dist/client/router";
 
 export default function ThankYou() {
   const { query } = useRouter();

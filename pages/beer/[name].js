@@ -1,7 +1,7 @@
 import { ChevronLeftIcon } from "@heroicons/react/solid";
 import { getBeers } from "../../libs/beers";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
 // Define paths that can be accessed using getStaticPaths
 // https://nextjs.org/docs/basic-features/data-fetching#getstaticpaths-static-generation
@@ -17,7 +17,7 @@ export async function getStaticPaths() {
   };
 }
 
-// Fetch the static data for our path, thus avoiding ever giving "Loading... message"
+// Fetch the static data for the path, thus avoiding ever giving "Loading... message"
 export async function getStaticProps({ params }) {
   const data = await getBeers();
   const current = data.find((beer) => beer.name == params.name);
@@ -27,7 +27,7 @@ export async function getStaticProps({ params }) {
   };
 }
 
-// Create a page based on the current beer's name with additional info about the beer (aroma, mouthfeel and so on)
+// Create a page based on the current beer's name with additional info about the beer (aroma, mouthfeel etc.)
 export default function Beer({ current }) {
   return (
     <div className="App">

@@ -2,7 +2,7 @@ import { getBeers } from "../libs/beers";
 import ProductList from "../components/Productlist";
 import { useBasket } from "../hooks/useBasket";
 
-// Fetch the static data for our path, thus avoiding ever giving "Loading... message"
+// Fetch the static data for the path, thus avoiding ever giving "Loading... message"
 export async function getStaticProps() {
   const beers = await getBeers();
   return {

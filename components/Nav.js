@@ -1,11 +1,11 @@
-import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
 import DarkmodeToggle from "../components/DarkmodeToggle";
-import { useBasket } from "../hooks/useBasket";
 import IconBeer from "./icons/IconBeer";
 import IconCart from "./icons/IconCart";
 import IconHome from "./icons/IconHome";
 import IconLogin from "./icons/IconLogin";
+import Link from "next/link";
+import { useBasket } from "../hooks/useBasket";
+import { useEffect, useRef, useState } from "react";
 
 // Primary navigation with 4 links with icons + the darkmode toggle
 export default function Nav() {
