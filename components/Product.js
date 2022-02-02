@@ -3,12 +3,24 @@ import { ChevronUpIcon } from "@heroicons/react/solid";
 import Image from "next/image";
 import Link from "next/link";
 import useOnTap from "../hooks/useOnTap";
+import { useEffect, useState } from "react";
 
 export default function Product(props) {
-  // Use hook to determine wheather beer is currently on tap
+  // Use hook to determine if beer is currently on tap
   const onTap = useOnTap(props.name);
+  const [addedText, setAddedText] = useState(false);
+  useEffect(() => {
+    if (addedText) {
+      const timeout = setTimeout(() => setAddedText(false), 1000);
+      return () => {
+        // "Clean-up function"
+        clearTimeout(timeout);
+      };
+    }
+  }, [addedText]);
 
-  function getInTheBasket() {
+  function putInTheBasket() {
+    setAddedText(true);
     props.addToBasket({
       price: 49,
       name: props.name,
@@ -29,13 +41,13 @@ export default function Product(props) {
           <p>{`${props.alc}%`}</p>
           <p className="price">Kr. {49},- </p>
           <p className="notontap" hidden={onTap !== false}>
-            This beer is not on tap today
+            <strong>This beer is not on tap today</strong>
           </p>
         </div>
       </div>
       <div className="product-buttons">
-        <button onClick={getInTheBasket} disabled={onTap !== true} className="btn">
-          Add to cart
+        <button onClick={putInTheBasket} disabled={onTap !== true} className="btn">
+          {addedText ? "Beer added" : "Add to cart"}
         </button>
         <Disclosure>
           {({ open }) => (

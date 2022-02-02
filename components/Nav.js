@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 import DarkmodeToggle from "../components/DarkmodeToggle";
 import { useBasket } from "../hooks/useBasket";
 import IconBeer from "./icons/IconBeer";
@@ -9,6 +10,13 @@ import IconLogin from "./icons/IconLogin";
 // Primary navigation with 4 links with icons + the darkmode toggle
 export default function Nav() {
   const { totalItems } = useBasket();
+  const previous = useRef(totalItems);
+  const [showScale, setShowScale] = useState(false);
+  useEffect(() => {
+    if (previous.current !== totalItems) {
+      setShowScale(true);
+    }
+  }, [totalItems]);
   return (
     <nav>
       <div className="nav-width">
@@ -27,7 +35,9 @@ export default function Nav() {
         <Link href="/cart">
           <a className="basket-icon">
             <IconCart className="icon-size main-txt" />
-            <div className="total-items">{totalItems}</div>
+            <div onAnimationEnd={() => setShowScale(false)} className={"total-items " + (showScale ? "scale" : "")}>
+              {totalItems}
+            </div>
           </a>
         </Link>
 

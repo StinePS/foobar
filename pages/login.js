@@ -9,7 +9,7 @@ const Login = () => {
               <div className="column">
                 <fieldset>
                   <label htmlFor="username">Username</label>
-                  <input className="form-input" name="username" id="username" type="text" placeholder="admin" required />
+                  <input className="form-input" name="username" id="username" type="text" placeholder="user1" required />
                 </fieldset>
               </div>
               <div className="column">
